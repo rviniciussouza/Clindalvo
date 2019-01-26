@@ -1,6 +1,15 @@
 package br.edu.ifnmg.clindalvo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Portaria {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String dataInicio;
 	private String ementa;
 	private String descricao;
@@ -63,6 +72,12 @@ public class Portaria {
 	}
 	public void setDemandante(Integer demandante) {
 		this.demandante = demandante;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 	
