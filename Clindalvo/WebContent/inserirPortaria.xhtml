@@ -6,10 +6,74 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Inserir Portaria</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Inserir Portaria</title>
 </h:head>
 <h:body>
+	<h:form>
+		<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+		<h3 style="margin-top: 0">Informaçoes da Portaria</h3>
+		<p:separator />
+		<h:panelGrid columns="4" cellpadding="4">
 
+			<h:outputLabel for="numeroPortaria" value="Numero de inscriçao:" />
+			<p:inputText id="numeroPortaria"
+				value="#{portariaBean.numeroPortaria}" required="true"
+				label="numeroPortaria"
+				requiredMessage="Campo Nome deve ser preenchido." />
+
+			<h:outputLabel for="link" value="Link para a portaria:" />
+			<p:password id="link" value="#{portariaBean.link}" required="true"
+				label="link" requiredMessage="Campo Nome deve ser preenchido." />
+
+			<h:outputLabel for="dataInicio" value="Data de inicio:" />
+			<p:inputText id="dataInicio" value="#{portariaBean.dataInicio}"
+				required="true" label="dataInicio"
+				requiredMessage="Campo Nome deve ser preenchido." />
+
+			<h:outputLabel for="cargaHoraria" value="Carga Horaria:" />
+			<p:inputText id="cargaHoraria" value="#{portariaBean.cargaHoraria}"
+				required="true" label="cargaHoraria"
+				requiredMessage="Campo Nome deve ser preenchido." />
+
+			<h:outputLabel for="Ementa" value="Ementa:" />
+			<p:inputText id="Ementa" value="#{portariaBean.ementa}"
+				required="true" label="ementa"
+				requiredMessage="Campo Nome deve ser preenchido." />
+
+			<h:outputLabel for="decricao" value="Descrição:" />
+			<p:inputText id="descricao" value="#{portariaBean.descricao}"
+				required="true" label="descricao"
+				requiredMessage="Campo Nome deve ser preenchido." />
+
+		</h:panelGrid>
+
+		<h3 style="margin-top: 0">Informações complementares</h3>
+		<p:separator />
+
+		<h:panelGrid columns="4" cellpadding="4">
+
+			<h:outputLabel for="tipoPortaria" value="Modelo de Portaria:" />
+			<p:inputText id="tipoPortaria" value="#{portariaBean.tipoPortaria}"
+				required="true" label="tipoPortaria"
+				requiredMessage="Campo Nome deve ser preenchido." />
+
+			<h:outputLabel for="dataPdf" value="Data da comissao:" />
+			<p:inputText id="dataPdf" value="#{portariaBean.dataPdf}"
+				required="true" label="dataPdf"
+				requiredMessage="Campo Nome deve ser preenchido." />
+
+			<h:outputLabel for="demandante" value="Requirente:" />
+			<p:inputText id="demandante" value="#{portariaBean.demandante}"
+				required="true" label="demandante"
+				requiredMessage="Campo Nome deve ser preenchido." />
+
+			<f:facet name="footer">
+				<p:commandButton value="Salvar" update="growl"
+					action="#{portariaBean.salvar}"
+					requiredMessage="Campo Nome deve ser preenchido." />
+			</f:facet>
+		</h:panelGrid>
+	</h:form>
 </h:body>
 </html>

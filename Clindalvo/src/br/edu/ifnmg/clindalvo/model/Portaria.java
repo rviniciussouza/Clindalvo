@@ -19,6 +19,21 @@ public class Portaria {
 	private String dataPdf;
 	private String tipoPortaria;
 	private Integer demandante;
+	
+	/*public Portaria(String dataInicio, String ementa, String descricao, 
+			Integer numeroPortaria, String link, Integer cargaHoraria,
+			String dataPdf, String tipoPortaria, Integer demandante) {
+		this.dataInicio = dataInicio;
+		this.ementa = ementa;
+		this.descricao = descricao;
+		this.numeroPortaria= numeroPortaria;
+		this.link = link;
+		this.cargaHoraria = cargaHoraria;
+		this.dataPdf = dataPdf;
+		this.tipoPortaria = tipoPortaria;
+		this.demandante = demandante;
+	}*/
+	
 	public String getDataInicio() {
 		return dataInicio;
 	}
