@@ -1,5 +1,8 @@
 package br.edu.ifnmg.clindalvo.bean;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.ManagedBean;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -88,6 +91,14 @@ public class PortariaBean {
 		salvo = true;
 		FacesContext.getCurrentInstance().addMessage(null, msg);
 		PrimeFaces.current().ajax().addCallbackParam("salvo", salvo);
+	}
+	
+	public List<String> autoCompleteDemandante(String query){
+		List<String> resultado = new ArrayList<String>();
+		for(int i = 0; i < 10; i++) {
+            resultado.add(query + i);
+        }
+		return resultado;
 	}
 
 }

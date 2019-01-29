@@ -14,10 +14,10 @@
 		<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
 		<h3 style="margin-top: 0">Informaçoes da Portaria</h3>
 		<p:separator />
-		<h:panelGrid columns="4" cellpadding="4">
+		<h:panelGrid columns="6" cellpadding="2">
 
 			<h:outputLabel for="numeroPortaria" value="Numero de inscriçao:" />
-			<p:inputText id="numeroPortaria"
+			<p:inputNumber id="numeroPortaria" decimalPlaces="0"
 				value="#{portariaBean.numeroPortaria}" required="true"
 				label="numeroPortaria"
 				requiredMessage="Campo Nome deve ser preenchido." />
@@ -27,12 +27,12 @@
 				label="link" requiredMessage="Campo Nome deve ser preenchido." />
 
 			<h:outputLabel for="dataInicio" value="Data de inicio:" />
-			<p:inputText id="dataInicio" value="#{portariaBean.dataInicio}"
+			<p:calendar id="dataInicio" showOn="button" value="#{portariaBean.dataInicio}"
 				required="true" label="dataInicio"
-				requiredMessage="Campo Nome deve ser preenchido." />
+				requiredMessage="Campo Obrigatorio." />
 
 			<h:outputLabel for="cargaHoraria" value="Carga Horaria:" />
-			<p:inputText id="cargaHoraria" value="#{portariaBean.cargaHoraria}"
+			<p:inputNumber id="cargaHoraria" decimalPlaces="0" value="#{portariaBean.cargaHoraria}"
 				required="true" label="cargaHoraria"
 				requiredMessage="Campo Nome deve ser preenchido." />
 
@@ -51,7 +51,7 @@
 		<h3 style="margin-top: 0">Informações complementares</h3>
 		<p:separator />
 
-		<h:panelGrid columns="4" cellpadding="4">
+		<h:panelGrid columns="6" cellpadding="2">
 
 			<h:outputLabel for="tipoPortaria" value="Modelo de Portaria:" />
 			<p:inputText id="tipoPortaria" value="#{portariaBean.tipoPortaria}"
@@ -59,14 +59,15 @@
 				requiredMessage="Campo Nome deve ser preenchido." />
 
 			<h:outputLabel for="dataPdf" value="Data da comissao:" />
-			<p:inputText id="dataPdf" value="#{portariaBean.dataPdf}"
+			<p:calendar id="dataPdf" showOn="button" value="#{portariaBean.dataPdf}"
 				required="true" label="dataPdf"
 				requiredMessage="Campo Nome deve ser preenchido." />
 
 			<h:outputLabel for="demandante" value="Requirente:" />
-			<p:inputText id="demandante" value="#{portariaBean.demandante}"
-				required="true" label="demandante"
-				requiredMessage="Campo Nome deve ser preenchido." />
+			<p:autoComplete id="demandante" completeMethod="#{portariaBean.autoCompleteDemandante}" maxResults="6"
+				value="#{portariaBean.demandante}" required="true"
+				label="demandante" dropdown="true"
+				requiredMessage="Campo Obrigatorio." />
 
 			<f:facet name="footer">
 				<p:commandButton value="Salvar" update="growl"
